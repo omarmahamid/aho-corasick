@@ -168,8 +168,9 @@ public class PayloadTrie<T> {
     public void parseText(final CharSequence text, final PayloadEmitHandler<T> emitHandler) {
         PayloadState<T> currentState = getRootState();
 
-        for (int position = 0; position < text.length(); position++) {
-            char character = text.charAt( position);
+        int length = text.length();
+        for (int position = 0; position < length; position++) {
+            char character = text.charAt(position);
 
             if (trieConfig.isCaseInsensitive()) {
                 character = Character.toLowerCase(character);
